@@ -7,6 +7,7 @@ import Checkout from '../pages/Checkout'
 import Login from '../pages/Login'
 import Signup from '../pages/Signup'
 import ProtectedRoute from './ProtectedRoute'
+import Invoice from '../pages/Invoice'
 
 
 const Routers = () => {
@@ -27,6 +28,7 @@ const Routers = () => {
         />
         <Route path='login' element={<Login/>}/>
         <Route path='signup' element={<Signup/>}/>
+        <Route path='invoice' element={<Invoice/>}/>
     </Routes> 
 };
 export default Routers

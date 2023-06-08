@@ -13,7 +13,7 @@ const Checkout = () => {
     const totalQty = useSelector(state=>state.cart.totalQuantity)
     const totalAmount = useSelector(state=>state.cart.totalAmount)
 
-
+    
     return (
         <Helmet title='Checkout'>
             <CommonSection title='Checkout' />
@@ -64,7 +64,7 @@ const Checkout = () => {
                                 <h4>
                                     Total : <span>Rp {totalAmount}</span>
                                 </h4>
-                                <button className='buy__btn auth__btn w-100'><Link to='/InvoicePage'>Buat Pesanan</Link></button>
+                                <button className='buy__btn auth__btn w-100'><Link to='/invoice'>Buat Pesanan</Link></button>
                             </div>
                         </Col>
                     </Row>
