@@ -6,12 +6,20 @@ import '../styles/checkout.css'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
+import { useContext } from 'react'
+import { FormContext } from '../contextAPI/FormContext'
+
 
 
 const Checkout = () => {
 
     const totalQty = useSelector(state=>state.cart.totalQuantity)
     const totalAmount = useSelector(state=>state.cart.totalAmount)
+
+    const { updateFormValues } = useContext(FormContext);
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        updateFormValues(name, value);}
 
     
     return (
@@ -24,27 +32,27 @@ const Checkout = () => {
                             <h6 className='mb-4 fw-bold'>Informasi Pesanan</h6>
                             <Form className='billing__form'>
                                 <FormGroup className="form__group">
-                                    <input type="text" placeholder='Nama Pemesan' />
+                                    <input type="text" placeholder='Nama Pemesan' name="nama" onChange={handleChange} />
                                 </FormGroup>
 
                                 <FormGroup className="form__group">
-                                    <input type="number" placeholder='Nomor Telepon' />
+                                    <input type="number" placeholder='Nomor Telepon' name="nomor" onChange={handleChange}/>
                                 </FormGroup>
 
                                 <FormGroup className="form__group">
-                                    <input type="text" placeholder='Alamat lengkap' />
+                                    <input type="text" placeholder='Alamat lengkap' name="alamat" onChange={handleChange}/>
                                 </FormGroup>
 
                                 <FormGroup className="form__group">
-                                    <input type="text" placeholder='Kota/Kabupaten' />
+                                    <input type="text" placeholder='Kota/Kabupaten' name="kota" onChange={handleChange}/>
                                 </FormGroup>
 
                                 <FormGroup className="form__group">
-                                    <input type="text" placeholder='Kode Pos' />
+                                    <input type="text" placeholder='Kode Pos' name="pos" onChange={handleChange} />
                                 </FormGroup>
 
                                 <FormGroup className="form__group">
-                                    <input type="text" placeholder='Negara' />
+                                    <input type="text" placeholder='Negara' name="negara" onChange={handleChange}/>
                                 </FormGroup>
                             </Form>
                         </Col>

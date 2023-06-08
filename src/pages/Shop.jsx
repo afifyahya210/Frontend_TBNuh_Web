@@ -74,8 +74,8 @@ const Shop = () => {
               <div className="filter__widget">
                 <select value={sorting} onChange={handleSortingChange}>
                   <option>Sort By</option>
-                  <option value="ascending">Ascending</option>
-                  <option value="descending">Descending</option>
+                  <option value="ascending">Paling Mahal</option>
+                  <option value="descending">Paling Murah</option>
                 </select>
               </div>
             </Col>

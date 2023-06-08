@@ -71,7 +71,7 @@ const ProductDetails = () => {
         <section className='pt-0'>
             <Container>
                 <Row>
-                    <Col lg='6'>
+                    <Col lg='6'> <br/>
                         <img src={imgUrl} alt="" />
                     </Col>
                     <Col lg='6'>
