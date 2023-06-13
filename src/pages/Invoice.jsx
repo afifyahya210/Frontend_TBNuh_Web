@@ -50,7 +50,7 @@ const Invoice = () => {
                         <Col lg='4'> <br/>
                             <div className='checkout__cart'>
                                 <h6>Total Pesanan Anda : <span>{totalQty} barang </span></h6>
-                                <h6>Subtotal: <span>Rp {totalAmount}</span></h6>
+                                <h6>Subtotal: <span className='product__price' style={{ fontWeight: 'bold' }}>Rp {totalAmount.toLocaleString('id-ID')}</span></h6>
                                 <h6> 
                                     <span>
                                         Ongkos Kirim : <br />
@@ -60,7 +60,7 @@ const Invoice = () => {
                                 </h6>
 
                                 <h4>
-                                    Total : <span>Rp {totalAmount}</span>
+                                Total : <span className='product__price' style={{ fontWeight: 'bold' }}>Rp {totalAmount.toLocaleString('id-ID')}</span>
                                 </h4>
                                 <button className='buy__btn auth__btn w-100'><Link to='/home'>Beranda</Link></button>
                             </div>

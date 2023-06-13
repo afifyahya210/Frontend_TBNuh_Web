@@ -51,7 +51,8 @@ const Cart = () => {
                         <Col lg='3'>
                             <div>
                                 <h6 className='d-flex align-items-center justify-content-between'>Subtotal
-                                <span className='fs-4 fw-bold'>Rp {totalAmount}</span>
+                                <span className='product__price' style={{ fontWeight: 'bold' }}>Rp {totalAmount.toLocaleString('id-ID')}</span>
+
                                 </h6>
                             </div>
 
@@ -82,7 +83,7 @@ const Tr = ({item})=>{
         <tr >
             <td><img src={item.imgUrl} alt="" /></td>
             <td>{item.productName}</td>
-            <td>Rp {item.price}</td>
+            <td className='product__price fs-6 mt-2'>Rp {item.price.toLocaleString('id-ID')}</td>
             <td>{item.quantity}pcs</td>
             <td><motion.i 
                 whileTap={{ scale: 1.2 }}

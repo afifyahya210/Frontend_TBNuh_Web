@@ -100,7 +100,7 @@ const ProductDetails = () => {
                             </div>
 
                             <div className='d-flex align-items-center gap-5'>
-                            <span className='product__price'>Rp {price}</span>
+                            <span className='product__price'>Rp {price.toLocaleString('id-ID')}</span>
                             <span>Category : {category.toUpperCase()}</span>
                             </div>
                             <p className='mt-3'>{shortDesc}</p>

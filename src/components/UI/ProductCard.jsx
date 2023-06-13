@@ -37,7 +37,7 @@ const addToCart =()=>{
         <span>{item.category}</span>
         </div>
         <div className='product__card__buttom d-flex align-items-center justify-content-between p-2'>
-            <span className='price'>Rp {item.price}</span>
+        <span className='product__price fs-6 mt-2'>Rp {item.price.toLocaleString('id-ID')}</span>
             <motion.span whileTap={{scale:1.2}} onClick={addToCart}><i class="ri-add-circle-fill"></i></motion.span>
         </div>
     </div>

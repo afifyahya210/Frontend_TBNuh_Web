@@ -9,6 +9,11 @@ import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import { FormContext } from '../contextAPI/FormContext'
 
+import { useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify'
+import "react-toastify/dist/ReactToastify.css"
+
+
 
 
 const Checkout = () => {
@@ -19,8 +24,17 @@ const Checkout = () => {
     const { updateFormValues } = useContext(FormContext);
     const handleChange = (event) => {
         const { name, value } = event.target;
-        updateFormValues(name, value);}
+        updateFormValues(name, value);
+    }
 
+    const handleButtonClick = () => {
+        toast("Berhasil membuat pesanan")
+    }
+
+
+
+    
+    
     
     return (
         <Helmet title='Checkout'>
@@ -60,7 +74,7 @@ const Checkout = () => {
                         <Col lg='4'>
                             <div className='checkout__cart'>
                                 <h6>Total Pesanan : <span>{totalQty} barang </span></h6>
-                                <h6>Subtotal: <span>Rp {totalAmount}</span></h6>
+                                <h6>Subtotal: <span className='product__price' style={{ fontWeight: 'bold' }}>Rp {totalAmount.toLocaleString('id-ID')}</span></h6>
                                 <h6> 
                                     <span>
                                         Ongkos Kirim : <br />
@@ -70,9 +84,9 @@ const Checkout = () => {
                                 </h6>
 
                                 <h4>
-                                    Total : <span>Rp {totalAmount}</span>
+                                    Total : <span className='product__price' style={{ fontWeight: 'bold' }}>Rp {totalAmount.toLocaleString('id-ID')}</span>
                                 </h4>
-                                <button className='buy__btn auth__btn w-100'><Link to='/invoice'>Buat Pesanan</Link></button>
+                                <button className='buy__btn auth__btn w-100' ><Link to='/invoice' onClick={handleButtonClick}>Buat Pesanan</Link></button>
                             </div>
                         </Col>
                     </Row>
